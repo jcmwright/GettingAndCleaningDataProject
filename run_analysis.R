@@ -9,9 +9,9 @@
 
 ##Read files in to R
 #set directory paths for convenience
-datasetpath <- "J:/Data_Science_Specialization/Getting_and_Cleaning_Data/Week_4/data/UCI HAR Dataset"
-trainpath <- paste(datasetpath, "train", sep = "/")
-testpath <- paste(datasetpath, "test", sep = "/")
+datasetpath <- "J:/Data_Science_Specialization/Getting_and_Cleaning_Data/Week_4/data/UCI HAR Dataset" #working directory of dataset
+trainpath <- paste(datasetpath, "train", sep = "/") #working subdirectory of training data
+testpath <- paste(datasetpath, "test", sep = "/") #working subdirectory of test data
 
 #Read in files
 features <- read.table(paste(datasetpath, "features.txt", sep = "/"), header = FALSE)
@@ -23,7 +23,7 @@ testsubject <- read.table(paste(testpath, "subject_test.txt", sep = "/"), header
 teststats <- read.table(paste(testpath, "X_test.txt", sep = "/"), header = FALSE)
 testactivity <- read.table(paste(testpath, "Y_test.txt", sep = "/"), header = FALSE)
 
-columnnames <- names(transtats) #get column names
+columnnames <- features[,2] #get column names
 activitylabels <- read.table(paste(datasetpath,"activity_labels.txt", sep = "/"), header = FALSE)
 activitylabels.char <- as.character(activitylabels[,2])
 
@@ -54,7 +54,7 @@ meanstdnames.rewrite = gsub("[()-]", "", meanstdnames.rewrite) #remove parenthes
 colnames(meanstddf) <- meanstdnames.rewrite
 
 ##From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject. (Ob5)
-melted <- melt(meanstddf, id.vars = c("SubjectID", "ActivityID")) #Change the wide table to a long table.
+melted <- melt(meanstddf, id = c("SubjectID", "ActivityID")) #Change the wide table to a long table.
 casted <- dcast(melted, SubjectID + ActivityID ~ variable, mean) #take the average of each subject/activity combination.
 #Change the variable names to indicate that the mean was calculated for each Subject/Activity pair.
 castednames <- names(casted)
