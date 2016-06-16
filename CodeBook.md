@@ -1,7 +1,3 @@
----
-title: "CodeBook.md"
-output: html_document
----
 For variables referenced in the train and test datasets are described in the README.txt and features_info.txt files in the UCI HAR Dataset folder contained in the downloaded zip file.  The variables described below are the modified variable names or calculated variables created in this analysis.
         
 | Original Variable               	| Modified Variable Name       	| Calculated Variable Mean       	|

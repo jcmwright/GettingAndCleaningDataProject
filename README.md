@@ -30,16 +30,27 @@ The data calculations were stored in the train and test folders X_test.txt files
 
 Activity codes in the dataset were substituted with the descriptions in the file activity_labels.txt.
 
-<b>4. Appropriately label the data set with descriptive variable names.</b>
+<b>4. Appropriately label the data set with descriptive variable names. See CodeBook for variable names.</b>
 
 Variable labels (column headers, except for the Subject and Activity labels) were reformated to be easily readable, and contain only alpha characters.      
 
 <b>5. From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.</b>
 
-The mean value of each variable was calculated for each combination of subject and specific activity. The data labels were changed to add "Mean" to the end of each varible name to indicate the change from previous data in the dataset.
+The mean value of each variable was calculated for each combination of subject and specific activity. The data labels were changed to add "Mean" to the end of each varible name to indicate the change from previous data in the dataset. See Codebook for variables included.
 
 # Files Available in this repository:
 This README.md File - explanation of this repository, the analysis, and the files available.
+
 CodeBook.md - definition file for the variables in the dataset, as well as any calculated variables.
+
 run_analysis.R - R script that completes the objectives in the Analysis described above.
+
 TidySmarphoneData.txt - an exported text file of the data produced in Objective 5 in the Analysis section above.
+
+# Changes to script run_analysis.R
+
+Download the run_analysis.R file to your working folder. In the run_analysis.R script, change the following variables as needed to reflect the path to your working folder:
+
+Line 2 - set working directory path to your working directory folder.
+
+Line 12 - change the path stored in the variable datasetpath to reflect the path to your working directory.
