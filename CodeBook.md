@@ -87,5 +87,7 @@ For variables referenced in the train and test datasets are described in the REA
 | fBodyBodyGyroJerkMag-meanFreq() 	| fBodyBodyGyroJerkMagMeanFreq 	| fBodyBodyGyroJerkMagMeanZMean  	|
 
 The tidy data set has two additional variables:
+
 SubjectID - the number given to each of 30 subjects to identify data taken during that subject's recorded measurements. This number is determined from the table in the subject_train.txt and subject_test.txt files.
+
 ActivityID - The code that describes the activity performed by the train and test subjects. These codes and descriptions are taken from the y_train.txt and y_test.txt files. 
